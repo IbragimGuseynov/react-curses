@@ -1,2 +1,2 @@
 export const restaurantsToTabs = (restaurants) =>
-    restaurants.map(({ name }) => ({ title: name }));
+    restaurants.map(({ name, id }) => ({ title: name, forKey: id }));

@@ -19,7 +19,6 @@ export const Dish = ({ dish }) => {
   }
 
   const { name, price, ingredients } = dish;
-
   return (
     <div className={styles.dish}>
       <div className={styles.dish_half}>

@@ -60,6 +60,7 @@ export const NewReviewForm = () => {
         />
       </div>
       <Button
+        className={styles.new_review_btn}
         onClick={submit}
         disabled={!newRating.name || !newRating.text || !newRating.rating}
       >

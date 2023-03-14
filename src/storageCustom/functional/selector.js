@@ -7,9 +7,9 @@ export const useSelector = (select) => {
 
     useEffect(() => {
         const setSelect = (state) => setValue(select(state));
-        store.subscribe(setSelect)
+        // store.subscribe(setSelect)
 
-        return() => store.unsubscribe(setSelect)
+        // return() => store.unsubscribe(setSelect)
     }, [store, select])
 
     return value

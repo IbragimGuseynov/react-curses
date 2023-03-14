@@ -11,7 +11,7 @@ export const Reviews = ({ reviews }) => {
         {reviews.map(
           (review) =>
             !!review && (
-              <Review review={review} />
+              <Review key={review.id} review={review} />
             )
         )}
       </div>

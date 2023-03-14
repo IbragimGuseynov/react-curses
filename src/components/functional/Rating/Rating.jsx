@@ -21,6 +21,7 @@ export const Rating = ({
           .fill(null)
           .map((_, index) => (
             <img
+              key={index}
               src={index >= value ? Star : GoldStar}
               className={classnames(styles.star, styles[size])}
               onClick={() => onChange?.(index + 1)}
