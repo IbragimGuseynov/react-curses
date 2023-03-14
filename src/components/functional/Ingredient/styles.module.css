@@ -1,0 +1,21 @@
+.ingredient {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 5px 0;
+}
+
+.ingredient_title {
+    font-weight: 400;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 5px;
+}
+
+.actions_count {
+    margin: 0 5px;
+}

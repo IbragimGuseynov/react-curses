@@ -1,0 +1,20 @@
+.new_review {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.new_review_rating {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.new_review_rating_title {
+    width: 60px;
+}
+
+.new_review_rating_value {
+    
+}

@@ -1,0 +1,18 @@
+.input {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+}
+
+.input_label {
+    height: 25px;
+    width: 60px;
+}
+
+.input_content {
+    height: 27px;
+    box-sizing: border-box;
+    padding: 3px;
+    outline: none;
+}

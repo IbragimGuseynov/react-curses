@@ -1,0 +1,19 @@
+.review {
+}
+
+.review_half {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+}
+
+.review_title {
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.review_rating {
+    height: 18px;
+}

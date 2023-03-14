@@ -1,0 +1,11 @@
+.restaurant_content {
+    box-sizing: border-box;
+    padding: 0 16px;
+}
+
+.restaurant_content_title {
+    margin: 20px 0;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
