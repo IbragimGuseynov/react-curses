@@ -9,8 +9,7 @@ export const Cart = () => {
     <div className={styles.cart_content}>
       {cart.map(([name, count]) => (
         <div key={`${name}+${count}`} className={styles.cart_item}>
-          <div className={styles.cart_item_name}>{name}</div>
-          :
+          <div className={styles.cart_item_name}>{name}:</div>
           <div className={styles.cart_item_count}>{count}</div>
         </div>
       ))}
