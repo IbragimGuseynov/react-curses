@@ -10,7 +10,7 @@ export const useSelector = (select) => {
         // store.subscribe(setSelect)
 
         // return() => store.unsubscribe(setSelect)
-    }, [store, select])
+    }, [store])
 
     return value
 }
