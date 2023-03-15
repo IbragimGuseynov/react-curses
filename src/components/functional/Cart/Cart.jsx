@@ -1,15 +1,19 @@
 import React from "react";
-import { useSelector } from "../../../storageCustom/index";
+import { useSelector } from "react-redux";
+import { selectCartEntries } from "../../../store/cart/selector";
+import styles from "./styles.module.css";
 
 export const Cart = () => {
-  const cart = useSelector((state) => Object.entries(state));
+  const cart = useSelector(selectCartEntries);
   return (
-    <ul>
+    <div className={styles.cart_content}>
       {cart.map(([name, count]) => (
-        <li>
-          {name} : {count}
-        </li>
+        <div key={`${name}+${count}`} className={styles.cart_item}>
+          <div className={styles.cart_item_name}>{name}</div>
+          :
+          <div className={styles.cart_item_count}>{count}</div>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 };

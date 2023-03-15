@@ -1,16 +1,16 @@
 import React from 'react';
-import { StoreProvider } from "./storageCustom"
-import { store } from "./storageCustom/store"
+import { Provider } from 'react-redux';
+import { store } from "./store/index"
 import { RestaurantPage } from "./components/pages/restaurantPage/RestaurantPage"
-import { restaurants } from "./components/constants/restaurants"
+import { restaurants } from "./components/constants/data"
 
 function App() {
   return (
-    <StoreProvider store={store}>
+    <Provider store={store}>
       <div className="App">
         <RestaurantPage restaurants={restaurants} />
       </div>
-    </StoreProvider>
+    </Provider>
   );
 }
 

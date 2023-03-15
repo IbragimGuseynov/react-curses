@@ -6,12 +6,12 @@ import styles from './styles.module.css'
 export const Tabs = ({ tabs, onTabClick, activeIndex }) => {
   return (
     <div className={styles.tabs_layout}>
-      {tabs.map(({ title, forKey }, index) => (
+      {tabs.map(({ title, id }) => (
         <Tab
-          key={forKey}
+          key={id}
           title={title}
-          onClick={() => onTabClick(index)}
-          isActive={activeIndex === index}
+          onClick={() => onTabClick(id)}
+          isActive={activeIndex === id}
         />
       ))}
     </div>

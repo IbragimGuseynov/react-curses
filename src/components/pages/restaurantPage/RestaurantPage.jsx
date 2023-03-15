@@ -1,27 +1,22 @@
-import {useState} from "react";
-import { restaurantsToTabs } from "../../utils/toTabs"
-import { Tabs } from "../../functional/Tabs/Tabs"
-import { Restaurant } from "../../functional/Restaurant/Restaurant"
-import { Cart } from "../../functional/Cart/Cart"
+import { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { Restaurant } from '../../functional/Restaurant/Restaurant'
+import { Cart } from '../../functional/Cart/Cart'
+import { RestaurantTabs } from '../../containers/restaurantContainer'
+import { selectRestaurantIds } from '../../../store/restaurant/selector'
 
-export const RestaurantPage = ({restaurants}) => {
-    const [activeRestaurantIndex, setActiveRestaurantIndex] = useState(0);
-    const activeRestaurant = restaurants[activeRestaurantIndex];
+export const RestaurantPage = ({ restaurants }) => {
+  const restaurantIds = useSelector(selectRestaurantIds)
+  const [activeRestaurantId, setActiveRestaurantId] = useState(restaurantIds[0])
 
-    if (! activeRestaurant) {
-        return null;
-    }
-
-    return (
+  return (
     <div className="restaurant_layout">
-        <Tabs 
-            tabs={
-                restaurantsToTabs(restaurants)
-            }
-            activeIndex={activeRestaurantIndex}
-            onTabClick={setActiveRestaurantIndex}
-        />
-        <Restaurant restaurant={activeRestaurant}/>
-        <Cart/>
-    </div>);
-};
+      <RestaurantTabs
+        activeId={activeRestaurantId}
+        onTabClick={setActiveRestaurantId}
+      />
+      {activeRestaurantId && <Restaurant restaurantId={activeRestaurantId} />}
+      <Cart />
+    </div>
+  )
+}
