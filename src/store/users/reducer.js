@@ -1,8 +1,8 @@
 import { users } from "../../components/constants/data";
 
 const initialState = {
-  entities: users.reduce((acc, restaurant) => {
-    acc[restaurant.id] = restaurant;
+  entities: users.reduce((acc, user) => {
+    acc[user.id] = user;
 
     return acc;
   }, {}),
