@@ -5,7 +5,7 @@ import { Cart } from '../../functional/Cart/Cart'
 import { RestaurantTabs } from '../../containers/restaurantContainer'
 import { selectRestaurantIds } from '../../../store/restaurant/selector'
 
-export const RestaurantPage = ({ restaurants }) => {
+export const RestaurantPage = () => {
   const restaurantIds = useSelector(selectRestaurantIds)
   const [activeRestaurantId, setActiveRestaurantId] = useState(restaurantIds[0])
 

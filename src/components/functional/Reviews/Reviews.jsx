@@ -19,7 +19,7 @@ export const Reviews = ({ restaurantId }) => {
       <div className={styles.reviews_title}>Reviews</div>
       <div className={styles.reviews_content}>
         {reviews.map(
-          (review) => !!review && <Review key={review.id} review={review} />
+          (review) => <Review key={review.id} review={review} />
         )}
       </div>
       <NewReviewForm />

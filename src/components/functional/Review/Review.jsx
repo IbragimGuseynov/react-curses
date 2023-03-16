@@ -14,10 +14,6 @@ export const Review = ({ review }) => {
     selectUserById(state, { userId })
   );
 
-  if (!review) {
-    return null;
-  }
-
   return (
     <div className={styles.review}>
       <div className={styles.review_half}>

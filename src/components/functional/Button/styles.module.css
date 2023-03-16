@@ -32,9 +32,25 @@
     border: none;
 }
 
+.primary:hover {
+    background-color: rgb(236, 87, 0);
+}
+
+.primary:active {
+    background-color: rgb(212, 80, 3);
+}
+
 .secondary {
-    background-color: rgb(209, 199, 190);
+    background-color: rgb(253, 151, 62);
     border: none;
+}
+
+.secondary:hover {
+    background-color: rgb(224, 132, 57);
+}
+
+.secondary:active {
+    background-color: rgb(180, 102, 38);
 }
 
 .primary.disabled {

@@ -7,19 +7,13 @@ import styles from "./styles.module.css";
 
 export const Restaurant = ({ restaurantId }) => {
   
-  const restaurant = useSelector((state) =>
-    selectRestaurantById(state, { restaurantId })
+  const restaurant_name = useSelector((state) =>
+    selectRestaurantById(state, { restaurantId }).name
   );
-
-  if (!restaurant) {
-    return null;
-  }
-
-  const { name } = restaurant;
 
   return (
     <div className={styles.restaurant_content}>
-      <div className={styles.restaurant_content_title}>{name}</div>
+      <div className={styles.restaurant_content_title}>{restaurant_name}</div>
       <Menu restaurantId={restaurantId} />
       <Reviews restaurantId={restaurantId} />
     </div>

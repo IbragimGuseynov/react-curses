@@ -1,12 +1,16 @@
 import React from "react";
-import { SIZE, BUTTON_VIEW_VARIANT } from "../../constants/sizes";
+import { SIZE } from "../../constants/sizes";
 import { useDispatch, useSelector } from "react-redux";
 import { selectDishCount } from "../../../store/cart/selector";
 import { selectDishById  } from "../../../store/dishes/selector.js";
-import { Button } from "../Button/Button";
+import { Button, BUTTON_VIEW_VARIANT } from "../Button/Button";
 import { Ingredient } from "../Ingredient/Ingredient";
+import { cartActions } from "../../../store/cart/reducer"
 
 import styles from "./styles.module.css";
+
+const minCount = 0;
+const maxCount = 0;
 
 export const Dish = ({ dishId }) => {
   const dish = useSelector((state) => selectDishById(state, { dishId }));
@@ -15,14 +19,9 @@ export const Dish = ({ dishId }) => {
   );
   const dispatch = useDispatch();
   const increment = () =>
-    dispatch({ type: "incrementDish", payload: dish.name });
+    dispatch({ type: cartActions.increment, payload: dish.name });
   const decrement = () =>
-    dispatch({ type: "decrementDish", payload: dish.name });
-
-  if (!dish) {
-    return null;
-  }
-
+    dispatch({ type: cartActions.decrement, payload: dish.name });
 
   const { name, price, ingredients } = dish;
   return (
@@ -34,7 +33,7 @@ export const Dish = ({ dishId }) => {
             className={styles.action}
             size={SIZE.s}
             viewVariant={BUTTON_VIEW_VARIANT.secondary}
-            disabled={count === 0}
+            disabled={count === minCount}
           >
             -
           </Button>
@@ -44,7 +43,7 @@ export const Dish = ({ dishId }) => {
             className={styles.action}
             size={SIZE.s}
             viewVariant={BUTTON_VIEW_VARIANT.secondary}
-            disabled={count === 6}
+            disabled={count === maxCount}
           >
             +
           </Button>
@@ -54,15 +53,13 @@ export const Dish = ({ dishId }) => {
         </div>
       </div>
       <div className={styles.dish_half}>
-        {" "}
-        {count > 0 && !!ingredients.length && (
+        {count > 0 && ingredients.length && (
           <div className={styles.ingredients}>
-            {" "}
             {ingredients.map((ingredient, id) => (
               <Ingredient key={`${dishId}+${id}`} name={ingredient} />
-            ))}{" "}
+            ))}
           </div>
-        )}{" "}
+        )}
       </div>
     </div>
   );

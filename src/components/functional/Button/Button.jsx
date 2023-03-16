@@ -1,8 +1,13 @@
 import React from "react";
 import classNames from "classnames";
-import { SIZE, BUTTON_VIEW_VARIANT } from "../../constants/sizes";
+import { SIZE } from "../../constants/sizes";
 
 import styles from "./styles.module.css";
+
+export const BUTTON_VIEW_VARIANT = {
+  primary: 'primary',
+  secondary: 'secondary'
+}
 
 export const Button = ({
   children,

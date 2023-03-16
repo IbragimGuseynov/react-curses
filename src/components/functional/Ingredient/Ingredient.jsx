@@ -7,10 +7,6 @@ import styles from "./styles.module.css";
 export const Ingredient = ({ name }) => {
   const { count, increment, decrement } = useCount({ max: 6, initialValue: 1 });
 
-  if (!name) {
-    return null;
-  }
-
   return (
     <div className={styles.ingredient}>
       <div className={styles.actions}>
