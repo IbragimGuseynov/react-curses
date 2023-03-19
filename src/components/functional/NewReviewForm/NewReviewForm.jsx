@@ -14,20 +14,20 @@ export const NewReviewForm = () => {
     console.log(Object.values(newRating).join(" "));
   };
 
-  const nameChangeCallback = ({ target: { value } }) => dispatch({ type: newReviewActions.setName, payload: value })
+  const isSubmitDisabled = !newRating.name || !newRating.text || !newRating.rating
+
+  const handleNameChange = ({ target: { value } }) => dispatch({ type: newReviewActions.setName, payload: value })
 
   const textChangeCallback = ({ target: { value } }) => dispatch({ type: newReviewActions.setText, payload: value })
 
   const ratingChangeCallback = (value) => dispatch({ type: newReviewActions.setRating, payload: value })
-
-  const isSubmitDisabled = !newRating.name || !newRating.text || !newRating.rating
 
   return (
     <div className={styles.new_review}>
       <Input
         label="Name"
         value={newRating.name}
-        onChange={nameChangeCallback}
+        onChange={handleNameChange}
       />
       <Input
         label="Text"

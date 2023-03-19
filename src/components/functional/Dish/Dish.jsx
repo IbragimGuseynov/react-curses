@@ -3,7 +3,7 @@ import { SIZE } from "../../constants/sizes";
 import { useDispatch, useSelector } from "react-redux";
 import { selectDishCount } from "../../../store/cart/selector";
 import { selectDishById  } from "../../../store/dishes/selector.js";
-import { Button, BUTTON_VIEW_VARIANT } from "../Button/Button";
+import { Button, BUTTON_VIEW_VARIANTS } from "../Button/Button";
 import { Ingredient } from "../Ingredient/Ingredient";
 import { cartActions } from "../../../store/cart/reducer"
 
@@ -32,7 +32,7 @@ export const Dish = ({ dishId }) => {
             onClick={decrement}
             className={styles.action}
             size={SIZE.s}
-            viewVariant={BUTTON_VIEW_VARIANT.secondary}
+            viewVariant={BUTTON_VIEW_VARIANTS.secondary}
             disabled={count === minCount}
           >
             -
@@ -42,7 +42,7 @@ export const Dish = ({ dishId }) => {
             onClick={increment}
             className={styles.action}
             size={SIZE.s}
-            viewVariant={BUTTON_VIEW_VARIANT.secondary}
+            viewVariant={BUTTON_VIEW_VARIANTS.secondary}
             disabled={count === maxCount}
           >
             +

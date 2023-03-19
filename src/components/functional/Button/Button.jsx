@@ -4,7 +4,7 @@ import { SIZE } from "../../constants/sizes";
 
 import styles from "./styles.module.css";
 
-export const BUTTON_VIEW_VARIANT = {
+export const BUTTON_VIEW_VARIANTS = {
   primary: 'primary',
   secondary: 'secondary'
 }
@@ -15,7 +15,7 @@ export const Button = ({
   disabled,
   className,
   size = SIZE.m,
-  viewVariant = BUTTON_VIEW_VARIANT.primary,
+  viewVariant = BUTTON_VIEW_VARIANTS.primary,
 }) => {
   return (
     <button
